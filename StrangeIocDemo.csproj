@@ -81,6 +81,9 @@
     <Compile Include="Assets\Demo1\Scripts\Command\StartCommand.cs" />
     <Compile Include="Assets\Demo1\Scripts\Demo1_ContextView.cs" />
     <Compile Include="Assets\Demo1\Scripts\Demo1_MVCSContext.cs" />
+    <Compile Include="Assets\Demo1\Scripts\Model\ScrollModel.cs" />
+    <Compile Include="Assets\Demo1\Scripts\Services\IScoreService.cs" />
+    <Compile Include="Assets\Demo1\Scripts\Services\ScoreService.cs" />
     <Compile Include="Assets\StrangeIoC\examples\Assets\scripts\multiplecontexts\game\GameContext.cs" />
     <Compile Include="Assets\StrangeIoC\examples\Assets\scripts\multiplecontexts\game\GameRoot.cs" />
     <Compile Include="Assets\StrangeIoC\examples\Assets\scripts\multiplecontexts\game\controller\GameEvent.cs" />

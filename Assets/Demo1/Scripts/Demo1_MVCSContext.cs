@@ -23,7 +23,8 @@ public class Demo1_MVCSContext : MVCSContext {
 
         //创建一个startCommand开始命令来做一些初始化命令，完成上面的绑定之后立即进行调用
         //事件一般定义为枚举类型，Bind就是绑定，ContextEvent.START是内置的，把StartCommand和它绑定就会自动调用
-        commandBinder.Bind(ContextEvent.START).To<StartCommand>();
+        //once是只触发一次，执行一次就解绑，不会再执行了
+        commandBinder.Bind(ContextEvent.START).To<StartCommand>().Once();
     }
 
     
