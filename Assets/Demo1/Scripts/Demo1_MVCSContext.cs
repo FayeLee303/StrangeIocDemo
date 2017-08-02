@@ -10,15 +10,22 @@ public class Demo1_MVCSContext : MVCSContext {
     //在这里是给指定一个view，就是context要绑定的物体
     public Demo1_MVCSContext(MonoBehaviour view) : base(view) { }
 
-    //进行绑定映射
+    //进行绑定映射,这里的绑定都是全局的，必须要使用全局的派发器
     protected override void mapBindings() {
         //model
 
         //service
+        //注入绑定
+        //ToSingleton表示这个对象只会在工程里生成一个
+        injectionBinder.Bind<IScoreService>().To<ScoreService>().ToSingleton();
 
         //command
+        commandBinder.Bind(Demo1CommandEvent.RequestScore).To<RequestScoreCommand>();
 
-        //mediator 这个其实就是view
+        //mediator 
+        //完成View和Mediator的绑定，绑定之后Mediator的创建交给StrangeIoc来处理，会自动绑定到物体上
+
+        mediationBinder.Bind<CubeView>().To<CubeMediator>();
 
 
         //创建一个startCommand开始命令来做一些初始化命令，完成上面的绑定之后立即进行调用
