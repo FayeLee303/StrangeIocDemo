@@ -13,7 +13,8 @@ public class Demo1_MVCSContext : MVCSContext {
     //进行绑定映射,这里的绑定都是全局的，必须要使用全局的派发器
     protected override void mapBindings() {
         //model
-
+        //接口和自身做绑定，用自身做构造
+        injectionBinder.Bind<ScrollModel>().To<ScrollModel>().ToSingleton();
         //service
         //注入绑定
         //ToSingleton表示这个对象只会在工程里生成一个
@@ -21,7 +22,8 @@ public class Demo1_MVCSContext : MVCSContext {
 
         //command
         commandBinder.Bind(Demo1CommandEvent.RequestScore).To<RequestScoreCommand>();
-
+        commandBinder.Bind(Demo1CommandEvent.UpdateScore).To<UpdateScoreCommand>();
+       
         //mediator 
         //完成View和Mediator的绑定，绑定之后Mediator的创建交给StrangeIoc来处理，会自动绑定到物体上
 
