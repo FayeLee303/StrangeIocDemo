@@ -12,6 +12,10 @@ public class Demo1_MVCSContext : MVCSContext {
 
     //进行绑定映射,这里的绑定都是全局的，必须要使用全局的派发器
     protected override void mapBindings() {
+
+        //Manager,绑定之后可以在任何一个View类里注入然后播放
+        injectionBinder.Bind<AudioManager>().To<AudioManager>().ToSingleton();
+
         //model
         //接口和自身做绑定，用自身做构造
         injectionBinder.Bind<ScrollModel>().To<ScrollModel>().ToSingleton();

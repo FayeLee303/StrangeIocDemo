@@ -13,6 +13,9 @@ public class CubeView : View {
     [Inject]
     public IEventDispatcher dispatcher { get; set; }
 
+    [Inject]
+    public AudioManager audioManager { get; set; }
+
     private Text scoreText;
 
     //最好不要用Start，而是用init，但是init不是自动调用的，需要在其他地方实现它
@@ -29,6 +32,7 @@ public class CubeView : View {
     {
         //Unity自带的函数，
         Debug.Log("OnMouseDown");
+        audioManager.Play("e");
 
         //点击时派发点击事件
         dispatcher.Dispatch(Demo1MediatorEvent.ClickDown);
