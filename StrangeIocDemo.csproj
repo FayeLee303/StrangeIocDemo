@@ -90,8 +90,12 @@
     <Compile Include="Assets\Demo1\Scripts\Services\ScoreService.cs" />
     <Compile Include="Assets\Demo1\Scripts\View\CubeMediator.cs" />
     <Compile Include="Assets\Demo1\Scripts\View\CubeView.cs" />
+    <Compile Include="Assets\Demo1\Scripts\View\DeactiveForTime.cs" />
     <Compile Include="Assets\Demo1\Scripts\View\Demo1MediatorEvent.cs" />
-    <Compile Include="Assets\FrameWork\Manager\AudioManager\AudioManager.cs" />
+    <Compile Include="Assets\FrameWork\Scripts\Manager\AudioManager.cs" />
+    <Compile Include="Assets\FrameWork\Scripts\Manager\PoolManager.cs" />
+    <Compile Include="Assets\FrameWork\Scripts\Pool\GameObjPool.cs" />
+    <Compile Include="Assets\FrameWork\Scripts\Pool\GameObjPoolList.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\ReadMe.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\CommandExceptionType.cs" />
     <Compile Include="Assets\StrangeIoC\scripts\strange\extensions\command\api\CommandKeys.cs" />

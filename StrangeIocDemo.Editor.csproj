@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\FrameWork\Editor\AudioWindowEditor.cs" />
+    <Compile Include="Assets\FrameWork\Editor\PoolManagerEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\FrameWork\Resources\audioList.txt" />

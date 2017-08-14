@@ -14,5 +14,6 @@ public class StartCommand : Command {
         Debug.Log("start command execute");
         //Manager Init
         audioManager.Init();
+        PoolManager.Instance.Init();//这个不需要注入
     }
 }
