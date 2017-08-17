@@ -15,5 +15,6 @@ public class StartCommand : Command {
         //Manager Init
         audioManager.Init();
         PoolManager.Instance.Init();//这个不需要注入
+        LocalizationManager.Instance.Init();//这个不需要注入
     }
 }
