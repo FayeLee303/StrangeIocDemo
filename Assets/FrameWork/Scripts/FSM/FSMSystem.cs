@@ -31,6 +31,7 @@ public class FSMSystem  {
             Debug.LogError("你想添加的状态"+state.GetStateID+"已经存在");
             return;
         }
+        state.fsm = this; //设置是哪个状态机在操作
         statesDict.Add(state.GetStateID,state);
     }
     //向状态机里删除状态
@@ -70,6 +71,20 @@ public class FSMSystem  {
             GetCurrentState.DoBeforeEntering();
             currentState = state; //当前状态切换至新的状态
             GetCurrentState.DoBeforeLeaving();
+        }
+    }
+
+    //设置一个开始默认状态，用来启动状态机
+    public void StartState(StateID id) {
+        FSMState state;
+        bool isGet = statesDict.TryGetValue(id, out state);//根据ID得到一个state
+        if (isGet)
+        {
+            state.DoBeforeEntering();
+            currentState = state;
+        }
+        else {
+            Debug.LogError("状态"+id+"不存在于状态机里");
         }
     }
 }

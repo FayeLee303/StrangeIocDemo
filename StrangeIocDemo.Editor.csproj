@@ -124,6 +124,8 @@
     <Compile Include="Assets\FrameWork\Editor\PoolManagerEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\FrameWork\Resources\Localization\Chinese.txt" />
+    <None Include="Assets\FrameWork\Resources\Localization\English.txt" />
     <None Include="Assets\FrameWork\Resources\audioList.txt" />
     <None Include="Assets\StrangeIoC\LICENSE-2.0.txt" />
     <None Include="Assets\StrangeIoC\README.txt" />

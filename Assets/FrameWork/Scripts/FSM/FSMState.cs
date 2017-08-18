@@ -4,17 +4,22 @@ using UnityEngine;
 
 //有哪些状态转换的条件
 public enum Transition {
-    NUllTransition = 0
+    NUllTransition = 0,
+    SawPlayer,//看到玩家
+    LostPlayer//看不到玩家
 }
 
 //状态标识符，一个状态只有一个ID且不可重复
 public enum StateID
 {
-    NUllStateID = 0
+    NUllStateID = 0,
+    Patrol,//巡逻
+    Chase//追玩家
+
 }
 
 //每一个状态的共有功能
-public class FSMState  {
+public abstract class FSMState  {
     protected StateID stateID;  //protected是子类可以访问
     public StateID GetStateID {
         get { return stateID; }
@@ -22,6 +27,8 @@ public class FSMState  {
 
     //在某个条件下转换到某个ID的状态
     protected Dictionary<Transition, StateID> mapDict = new Dictionary<Transition, StateID>();
+
+    public FSMSystem fsm;
 
     //添加转换条件
     public void AddTransition(Transition trans, StateID id) {
@@ -56,14 +63,20 @@ public class FSMState  {
         }
     }
 
-    //进入当前状态之前要做的事
+    //进入当前状态之前要做的事,子类可以重写这个方法，如果不重写就调用这个默认的方法，什么也不做
     public virtual void DoBeforeEntering() {
         //这里可以初始化
     }
 
-    //离开当前状态之前要做的事
+    //离开当前状态之前要做的事，子类可以重写这个方法，如果不重写就调用这个默认的方法，什么也不做
     public virtual void DoBeforeLeaving()
     {
         //这里可以清理
     }
+
+    //抽象方法没有内容，虚方法可以重写
+    //抽象方法必须包含在抽象类里，要把这个类设置为abstract
+    //这个函数重构时也没有参数
+    public abstract void DoUpdate(); // 当状态机处于当前状态时，会一直调用这个函数 
+
 }

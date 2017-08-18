@@ -85,6 +85,9 @@
     <Compile Include="Assets\Demo1\Scripts\Demo1_ContextView.cs" />
     <Compile Include="Assets\Demo1\Scripts\Demo1_MVCSContext.cs" />
     <Compile Include="Assets\Demo1\Scripts\Model\ScrollModel.cs" />
+    <Compile Include="Assets\Demo1\Scripts\NPCAi\ChaseState.cs" />
+    <Compile Include="Assets\Demo1\Scripts\NPCAi\NpcCtrl.cs" />
+    <Compile Include="Assets\Demo1\Scripts\NPCAi\PatrolState.cs" />
     <Compile Include="Assets\Demo1\Scripts\Services\Demo1ServiceEvent.cs" />
     <Compile Include="Assets\Demo1\Scripts\Services\IScoreService.cs" />
     <Compile Include="Assets\Demo1\Scripts\Services\ScoreService.cs" />
@@ -92,7 +95,11 @@
     <Compile Include="Assets\Demo1\Scripts\View\CubeView.cs" />
     <Compile Include="Assets\Demo1\Scripts\View\DeactiveForTime.cs" />
     <Compile Include="Assets\Demo1\Scripts\View\Demo1MediatorEvent.cs" />
+    <Compile Include="Assets\FrameWork\Scripts\FSM\FSMState.cs" />
+    <Compile Include="Assets\FrameWork\Scripts\FSM\FSMSystem.cs" />
     <Compile Include="Assets\FrameWork\Scripts\Manager\AudioManager.cs" />
+    <Compile Include="Assets\FrameWork\Scripts\Manager\LocaliationText.cs" />
+    <Compile Include="Assets\FrameWork\Scripts\Manager\LocalizationManager.cs" />
     <Compile Include="Assets\FrameWork\Scripts\Manager\PoolManager.cs" />
     <Compile Include="Assets\FrameWork\Scripts\Pool\GameObjPool.cs" />
     <Compile Include="Assets\FrameWork\Scripts\Pool\GameObjPoolList.cs" />
@@ -210,6 +217,8 @@
     <Compile Include="Assets\StrangeIoC\scripts\strange\framework\impl\SemiBinding.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\FrameWork\Resources\Localization\Chinese.txt" />
+    <None Include="Assets\FrameWork\Resources\Localization\English.txt" />
     <None Include="Assets\FrameWork\Resources\audioList.txt" />
     <None Include="Assets\StrangeIoC\LICENSE-2.0.txt" />
     <None Include="Assets\StrangeIoC\README.txt" />
